@@ -1,9 +1,15 @@
-[phases.build]
-dependsOn = ['install']
-cmds = ['npm run build -- --configuration production']
-
 [phases.install]
-cmds = ['npm install']
+cmds = ["npm install"]
+
+[phases.build]
+dependsOn = ["install"]
+cmds = ["npm run build -- --configuration production"]
+
+[phases.setup]
+cmds = [
+  "mkdir -p /app/browser",
+  "cp -r dist/web_Builder/* /app/browser/"
+]
 
 [start]
-cmd = 'caddy run --config /app/Caddyfile'
+cmd = "caddy run --config /app/Caddyfile"
