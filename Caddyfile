@@ -1,0 +1,4 @@
+:
+root * /app/dist/web_Builder
+try_files {path} /index.html
+file_server

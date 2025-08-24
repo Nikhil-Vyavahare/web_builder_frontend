@@ -1,0 +1,9 @@
+[phases.build]
+dependsOn = ['install']
+cmds = ['npm run build -- --configuration production']
+
+[phases.install]
+cmds = ['npm install']
+
+[start]
+cmd = 'caddy run --config /app/Caddyfile'
