@@ -1,0 +1,485 @@
+/* Base Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #0b0e14; /* your dark bg */
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height */
+}
+
+
+ body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: #0b0e14;
+  color: #e9eef7;
+  overflow: hidden; /* Hide body scrollbar */
+}
+
+/* Topbar */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, #0f1420, #0b0e14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header .brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7aa2ff, #9b7bff);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #0b0e14;
+  box-shadow: 0 4px 14px rgba(120, 140, 255, 0.35);
+}
+
+header .brand-text div:first-child {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  color: #e9eef7;
+}
+
+header .brand-text div:last-child {
+  opacity: 0.7;
+  font-size: 12px;
+  color: #e9eef7;
+}
+
+header input {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f1420;
+  color: #e9eef7;
+  outline: none;
+  transition: 0.25s;
+}
+
+header button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #111622;
+  color: #e9eef7;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+header button:hover {
+  background: #151a29;
+}
+
+header .new-project {
+  border: 0;
+  background: linear-gradient(135deg, #6ea8ff, #a283ff);
+  color: #0b0e14;
+  font-weight: 800;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(130, 150, 255, 0.3);
+}
+
+/* App Layout */
+/* .layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 360px;
+  gap: 14px;
+  padding: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+} */
+
+aside, main {
+  border-radius: 14px;
+  padding: 14px;
+  overflow: hidden; /* Hide scrollbar for aside and main container */
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  background: #0f1420;
+}
+
+main {
+  max-height: 70vh;
+  min-height: 70vh;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(180deg, #0e1320, #0c111b);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+main pre {
+  margin: 0;
+  padding: 10px;
+  white-space: pre-wrap; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
+  overflow: auto; /* Enable scrolling for pre content */
+  max-height: 100%; /* Fit within main's height */
+  color: #e9eef7;
+}
+
+/* textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0b0f19;
+  color: #e9eef7;
+  outline: none;
+  overflow: hidden; /* Hide scrollbar for textarea 
+}  */
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.button-row button {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.25s;
+}
+
+footer {
+  padding: 18px;
+  text-align: center;
+  opacity: 0.6;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0b0e14;
+  color: #e9eef7;
+}
+
+#gen {
+  flex: 1;
+  padding: 10px 12px;
+  border: 0;
+  background: linear-gradient(135deg, #6ea8ff, #a283ff);
+  color: #0b0e14;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(130, 150, 255, 0.28);
+  transition: 0.25s;
+}
+
+.re {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #111622;
+  color: #e9eef7;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#en {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(110, 168, 255, 0.35);
+  background: linear-gradient(135deg, #66e3c4, #6ea8ff);
+  color: #0b0e14;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#live {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(110, 168, 255, 0.35);
+  background: linear-gradient(135deg, #66e3c4, #6ea8ff);
+  color: #0b0e14;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+ 
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header input {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Hide scrollbars for all elements except where specified */
+*:not(main pre)::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox and IE/Edge for all except main pre */
+*:not(main pre) {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* App Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* main takes remaining space, right sidebar fixed */
+  gap: 14px;
+  padding: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+main {
+  border-radius: 14px;
+  padding: 20px;
+  overflow: auto;
+  background: linear-gradient(180deg, #0e1320, #0c111b);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  min-height: 70vh;
+  color: #e9eef7;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+main pre {
+  margin: 0;
+  padding: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+  max-height: 100%;
+  font-family: 'Fira Code', monospace;
+  background: #0b0e14;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Right sidebar styling */
+aside {
+  border-radius: 14px;
+  padding: 20px;
+  background: #0f1420;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0b0f19;
+  color: #e9eef7;
+  font-family: ui-sans-serif;
+  outline: none;
+  resize: vertical;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-row button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+  background: linear-gradient(135deg, #6ea8ff, #a283ff);
+  color: #0b0e14;
+  box-shadow: 0 6px 20px rgba(130, 150, 255, 0.3);
+}
+
+.button-row button:hover {
+  filter: brightness(1.1);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* Desktop: main + sidebar */
+  gap: 14px;
+  padding: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+main {
+  border-radius: 14px;
+  padding: 20px;
+  overflow: auto;
+  background: linear-gradient(180deg, #0e1320, #0c111b);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  min-height: 70vh;
+  color: #e9eef7;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+aside {
+  border-radius: 14px;
+  padding: 20px;
+  background: #0f1420;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* desktop: main + sidebar */
+  gap: 14px;
+  padding: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive for tablets */
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 1fr 1fr; /* two columns */
+  }
+  /* Remove the line that hides the sidebar */
+}
+
+/* Responsive for phones */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 12px;
+  }
+
+  aside {
+    width: 100%;
+    order: 2; /* sidebar below main */
+    padding: 15px;
+    border-radius: 12px;
+    background: #0f1420;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
+    display: flex; /* make sure it's not hidden */
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    min-height: 50vh;
+    order: 1; /* main above sidebar */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header input {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row button {
+    width: 100%;
+  }
+}
+.footer {
+  background: linear-gradient(135deg, #0f1420, #0b0e14);
+  color: #e9eef7;
+  padding: 18px 20px;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.footer-left p {
+  margin: 2px 0;
+  opacity: 0.8;
+}
+
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-right a {
+  color: #66e3c4;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.footer-right a:hover {
+  color: #6ea8ff;
+}
+
+.footer-right span {
+  opacity: 0.7;
+  font-size: 12px;
+}

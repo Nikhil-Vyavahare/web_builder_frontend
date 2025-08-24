@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Gemini Website Builder — Angular Project UI (HTML + CSS + JS)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-logo"> N</div>
+      <div class="brand-text">
+        <div>NVA Website Builder</div>
+        <div>Generate HTML | CSS | JS & UI generator</div>
+      </div>
+    </div>
+    <input placeholder="Search components, sections…" />
+    <div class="button-row">
+      <button>Docs</button>
+      <button>Templates</button>
+      <button class="new-project">+ New Project</button>
+    </div>
+  </header>  
+  <div class="layout">
+
+    <main>
+     <pre><code>{{ displayedCode }} </code></pre>
+    </main>
+
+    <aside>
+      <div style="font-weight:800; letter-spacing:.3px; font-size:13px; opacity:.9; margin-bottom:10px;">Gemini Prompt</div>
+      <textarea [(ngModel)]="promptText" placeholder="Describe the brand tone, pages, color accent, sections, and any special components you need…"></textarea>
+      <div class="button-row">
+        <button (click)="generateUI()" class="generate" id="gen" [disabled]="isGenerating">Generate UI</button>
+        <button class="re" (click)="clear()" [disabled]="isGenerating">Clear</button>
+        <button id="en" (click)="enhancePrompt()" [disabled]="isGenerating">✨ Prompt Enhance</button>
+        <button id="live" (click)="openLivePreview()" [disabled]="isGenerating">🚀 Live Preview</button>
+      </div>
+    </aside>
+  </div>
+
+   <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>© 2025 NVA WebBuilder | Powered by Spring Boot</p>
+      <p>Developed by <strong>Nikhil Vyavahare</strong></p>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:nikhilvyavahare2@gmail.com">Contact Me</a>
+      <a href="https://github.com/Nikhil-Vyavahare" target="_blank">GitHub</a>
+      <span>Version 1.0.0</span>
+    </div>
+  </div>
+</footer>
+
+  
+</body>
+</html>
+
