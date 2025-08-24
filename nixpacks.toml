@@ -3,7 +3,7 @@ cmds = ["npm install"]
 
 [phases.build]
 dependsOn = ["install"]
-cmds = ["npm run build -- --configuration production"]
+cmds = ["ng build web_Builder --configuration production"]
 
 [phases.setup]
 cmds = [
